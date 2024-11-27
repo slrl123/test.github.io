@@ -54,9 +54,9 @@
             position: fixed;
             top: 80px; /* 调整此值以确保侧边栏在导航栏下方 */
             left: 0;
-            width: 400px; /* 固定侧边栏宽度 */
+            width: 400px; /* 将侧边栏宽度固定为400像素 */
             padding: 20px;
-            background-color: #ffffff;
+            background-color: #f5f5f5;
             height: calc(100% - 80px); /* 高度减去导航栏高度 */
             overflow-y: auto;
         }
@@ -64,7 +64,7 @@
         .main-content {
             margin-left: 400px; /* 与侧边栏宽度一致 */
             padding: 20px;
-            background-color: #ffffff;
+            background-color: #ffffff; /* 将背景色改为 #ffffff */
         }
         /* 响应式布局 */
         @media (max-width: 767px) {
@@ -72,6 +72,7 @@
                 position: relative;
                 width: 100%;
                 height: auto;
+                top: 0;
             }
             .main-content {
                 margin-left: 0;
@@ -134,16 +135,13 @@
             <!-- 侧边栏 -->
             <div class="sidebar">
                 <!-- 侧边栏内容 -->
-                   <div class="thumbnail-people">
-                        <a href="#">
-                            <img src="./sub_img/touxiang.png" class="people-photo">
-                        </a>
-                    </div>
-                    <div>
-                        <li>Github:</li>
-                        <li>Google Scholar:</li>
-                    </div>
-                    
+                <h4>侧边栏</h4>
+                <ul>
+                    <li><a href="#">链接1</a></li>
+                    <li><a href="#">链接2</a></li>
+                    <li><a href="#">链接3</a></li>
+                    <li><a href="#">链接4</a></li>
+                </ul>
             </div>
             <!-- 主内容区域 -->
             <div class="main-content">
@@ -153,7 +151,7 @@
                             <img src="./sub_img/touxiang.png" class="people-photo">
                         </a>
                     </div>
-                    <div style="text-align: justify; display: block; margin: 50px auto; max-width: 1600px;">
+                    <div style="text-align: justify; display: block; margin: 50px auto; max-width: 100%;">
                         <p><strong>Huafeng Li (<font face="STXinwei">李华锋</font>)</strong>, a Professor with the School of Faculty of Information Engineering and Automation, Kunming University of Science and Technology (KUST), Kunming, China. Dr. Li is the director of Computer Vision and Image Processing Group (CVIP Group), which is affiliated to the Key Laboratory of Artificial Intelligence in Yunnan Province.
                           Dr. Li is the director of Computer Vision and Image Processing Group (CVIP Group), which is affiliated to the Key Laboratory of Artificial Intelligence in Yunnan Province. 
                           He received the Ph.D. degree in Control Theory and Control Engineering from Chongqing University, Chongqing, China, in December 2012. 
@@ -163,7 +161,7 @@
                           He has served for over 30 journals and conferences as reviewer or PC member, including <strong>CVPR</strong>, <strong>ECCV</strong>, <strong>AAAI</strong>, <strong>ACMMM</strong>, <strong>PRCV</strong>, <strong>WACV</strong>, <strong>IJCV</strong>, <strong>IEEE TIP</strong>, <strong>IEEE TIFS</strong>, <strong>IEEE TNNLS</strong>, <strong>IEEE TCYB</strong>, <strong>IEEE TIM</strong>, <strong>IEEE/CAA JAS</strong>, <strong>IEEE TCSVT</strong>, <strong>IEEE TETCI</strong>, <strong>IEEE TMM</strong>, <strong>INFFUS</strong>, <strong>NeuNet</strong>, <strong>KBS</strong>, <strong>ESWA</strong>, etc.
                         </p>
                     </div>
-                    <div class="grid3" id="experience" style="margin: 50px auto; max-width: 1600px;">
+                    <div class="grid3" id="experience" style="margin: 50px auto; max-width: 100%;">
                         <div class="grid3-header" style="margin: 50px auto; max-width: 100%;">
                             <h3 align='left'>Recent News</h3>
                         </div>

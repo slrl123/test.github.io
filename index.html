@@ -8,6 +8,11 @@
     <link href="./files/prettyPhoto.css" rel="stylesheet" type="text/css" media="all">
     <link href="./files/css" rel="stylesheet" type="text/css">
     <style>
+        /* 重置浏览器默认边距 */
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
         .people-photo {
             border-radius: 50%;
             height: 200px !important;
@@ -27,7 +32,7 @@
             line-height: 1.42857143;
             text-align: center;
         }
-        .container {
+        .container-fluid {
             font-family: Palatino Linotype, Helvetica Neue, Helvetica, Arial, sans-serif;
         }
         .academicegree {
@@ -44,24 +49,26 @@
             font-style: italic;
             color: #1a237e;
         }
-        /* 新增的侧边栏样式 */
+        /* 侧边栏样式 */
         .sidebar {
             position: sticky;
             top: 0;
             padding: 20px;
             background-color: #f5f5f5;
         }
+        /* 内容区域样式 */
         .main-content {
             padding: 20px;
+            background-color: #ffffff; /* 可根据需要设置背景色 */
         }
-        /* 使页面自适应 */
+        /* 响应式布局 */
         @media (min-width: 768px) {
             .sidebar {
-                width: 25%;
+                width: 20%; /* 侧边栏占20%宽度 */
                 float: left;
             }
             .main-content {
-                width: 75%;
+                width: 80%; /* 内容区域占80%宽度 */
                 float: left;
             }
         }
@@ -97,27 +104,28 @@
             </div>
             <div class="clear"> </div>
             <!---End-top-nav--->
-        </div>
+         </div>
     </div>
 
-    <script>
-        var lastname = 'Me';
-        function func(name) {
-            var div = document.getElementById(name);
-            div.className = 'active';
-            div = document.getElementById(lastname);
-            div.className = '';
-            lastname = name;
-        }
-        function coming_soon() {
-            alert("Coming soon.");
-        }
-    </script>
+    <script> 
+    var lastname = 'Me';
+    function func(name){
+        var div = document.getElementById(name); 
+        div.className = 'active'; 
+        div = document.getElementById(lastname); 
+        div.className = ''; 
+        lastname = name;
+    }
+    function coming_soon()
+    {
+        alert("Coming soon.");
+    }
+    </script> 
 
     <!---End-wrap--->
     <div class="content">
-        <div class="container">
-            <!-- 使用浮动布局 -->
+        <div class="container-fluid">
+            <!-- 侧边栏 -->
             <div class="sidebar">
                 <!-- 侧边栏内容 -->
                 <h4>侧边栏</h4>
@@ -128,6 +136,7 @@
                     <li><a href="#">链接4</a></li>
                 </ul>
             </div>
+            <!-- 主内容区域 -->
             <div class="main-content">
                 <div class="grid1" id="me">
                     <div class="thumbnail-people">
@@ -136,28 +145,21 @@
                         </a>
                     </div>
                     <div style="text-align: justify; display: block; margin: 50px auto; max-width: 100%;">
-                        <p><strong>Huafeng Li (<font face="STXinwei">李华锋</font>)</strong>, a Professor with the School of Faculty of Information Engineering and Automation, Kunming University of Science and Technology (KUST), Kunming, China. Dr. Li is the director of Computer Vision and Image Processing Group (CVIP Group), which is affiliated to the Key Laboratory of Artificial Intelligence in Yunnan Province.
-                            Dr. Li is the director of Computer Vision and Image Processing Group (CVIP Group), which is affiliated to the Key Laboratory of Artificial Intelligence in Yunnan Province.
-                            He received the Ph.D. degree in Control Theory and Control Engineering from Chongqing University, Chongqing, China, in December 2012.
-                            His current research interests include Computer Vision, Image Registration and Fusion, Multimedia Information Processing and Retrieval, Medical Image Processing and Segmentation, Visual grounding, Person Re-identification, Remote Sensing Image Interpretation.
-                            Dr. Li was the World’s Top 2% Scientists (2020, 2021, 2024), Xingdian Elite Youth Top Notch Talents of Yunnan Province, the Young Editor of the Journal of Chongqing University.
-                            Currently, he has published over 60 papers in <strong>CVPR</strong>, <strong>AAAI</strong>, <strong>ACMMM</strong>, <strong>ICME</strong>, <strong>IJCV</strong>, <strong>IEEE TIP</strong>, <strong>IEEE TIFS</strong>, <strong>IEEE TNNLS</strong>, <strong>IEEE TMM</strong>, <strong>IEEE TII</strong> , <strong>IEEE TCSVT</strong>, <strong>IEEE TGRS</strong>, <strong>IEEE TCI</strong>, <strong>IEEE TETCI</strong>, <strong>IEEE TIM</strong>, <strong>IEEE TITS</strong>, <strong>IEEE/CAA JAS</strong>, <strong>PR</strong>, <strong>INS</strong>, <strong>INFFUS</strong>, <strong>NeuNet</strong>, <strong>KBS</strong>, <strong>ESWA</strong>, etc.
-                            He has served for over 30 journals and conferences as reviewer or PC member, including <strong>CVPR</strong>, <strong>ECCV</strong>, <strong>AAAI</strong>, <strong>ACMMM</strong>, <strong>PRCV</strong>, <strong>WACV</strong>, <strong>IJCV</strong>, <strong>IEEE TIP</strong>, <strong>IEEE TIFS</strong>, <strong>IEEE TNNLS</strong>, <strong>IEEE TCYB</strong>, <strong>IEEE TIM</strong>, <strong>IEEE/CAA JAS</strong>, <strong>IEEE TCSVT</strong>, <strong>IEEE TETCI</strong>, <strong>IEEE TMM</strong>, <strong>INFFUS</strong>, <strong>NeuNet</strong>, <strong>KBS</strong>, <strong>ESWA</strong>, etc.
-                        </p>
+                        <p><strong>Huafeng Li (<font face="STXinwei">李华锋</font>)</strong>，昆明理工大学信息工程与自动化学院教授，博士生导师。李博士是云南省人工智能重点实验室下属的计算机视觉与图像处理研究组（CVIP Group）负责人。他于2012年12月在重庆大学获得控制理论与控制工程博士学位。他的研究兴趣包括计算机视觉、图像配准与融合、多媒体信息处理与检索、医学图像处理与分割、视觉定位、行人再识别、遥感图像解译等。李博士是世界前2%顶尖科学家（2020、2021、2024），云南省“兴滇英才计划”青年拔尖人才，重庆大学学报青年编委。目前，他已在<strong>CVPR</strong>、<strong>AAAI</strong>、<strong>ACMMM</strong>、<strong>ICME</strong>、<strong>IJCV</strong>、<strong>IEEE TIP</strong>、<strong>IEEE TIFS</strong>、<strong>IEEE TNNLS</strong>、<strong>IEEE TMM</strong>、<strong>IEEE TII</strong>、<strong>IEEE TCSVT</strong>、<strong>IEEE TGRS</strong>、<strong>IEEE TCI</strong>、<strong>IEEE TETCI</strong>、<strong>IEEE TIM</strong>、<strong>IEEE TITS</strong>、<strong>IEEE/CAA JAS</strong>、<strong>PR</strong>、<strong>INS</strong>、<strong>INFFUS</strong>、<strong>NeuNet</strong>、<strong>KBS</strong>、<strong>ESWA</strong>等期刊和会议上发表了60多篇论文。他担任了30多个期刊和会议的审稿人或程序委员会成员，包括<strong>CVPR</strong>、<strong>ECCV</strong>、<strong>AAAI</strong>、<strong>ACMMM</strong>、<strong>PRCV</strong>、<strong>WACV</strong>、<strong>IJCV</strong>、<strong>IEEE TIP</strong>、<strong>IEEE TIFS</strong>、<strong>IEEE TNNLS</strong>、<strong>IEEE TCYB</strong>、<strong>IEEE TIM</strong>、<strong>IEEE/CAA JAS</strong>、<strong>IEEE TCSVT</strong>、<strong>IEEE TETCI</strong>、<strong>IEEE TMM</strong>、<strong>INFFUS</strong>、<strong>NeuNet</strong>、<strong>KBS</strong>、<strong>ESWA</strong>等。</p>
                     </div>
                     <div class="grid3" id="experience" style="margin: 50px auto; max-width: 100%;">
                         <div class="grid3-header" style="margin: 50px auto; max-width: 100%;">
-                            <h3 align='left'>Recent News</h3>
+                            <h3 align='left'>最新消息</h3>
                         </div>
                         <div class="grid3-content" style="align:left;width:100%">
                             <div class="grid3-content">
                                 <ul class="graid3-ul" style="list-style-type:disc; height: 400px;overflow-y: auto;">
                                     <div style="text-align: justify; display: block; margin-right: auto;">
-                                        <li><img src="./sub_img/news2.gif" width="12%" style="background: none; vertical-align: text-bottom; border-radius: 0; padding: 0;">&nbsp;2024/11 -- One paper has been accepted by <strong>IEEE Transactions on Instrumentation and Measurement</strong> (JCR Q2).</li>
-                                        <li><img src="./sub_img/news2.gif" width="12%" style="background: none; vertical-align: text-bottom; border-radius: 0; padding: 0;">&nbsp;2024/10 -- One paper has been accepted by <strong> IEEE Transactions on Emerging Topics in Computational Intelligence</strong> (JCR Q2).</li>
-                                        <li><img src="./sub_img/news2.gif" width="12%" style="background: none; vertical-align: text-bottom; border-radius: 0; padding: 0;">&nbsp;2024/09 -- One paper has been accepted by <strong>Information Fusion</strong>(JCR Q1， CCF-A).</li>
-                                        <li><img src="./sub_img/news2.gif" width="12%" style="background: none; vertical-align: text-bottom; border-radius: 0; padding: 0;">&nbsp;2024/04 -- One paper has been accepted by <strong>IEEE/CVF Conference on Computer Vision and Pattern Recognition</strong> (JCR Q1、CCF A).</li>
-                                        <li><img src="./sub_img/news2.gif" width="12%" style="background: none; vertical-align: text-bottom; border-radius: 0; padding: 0;">&nbsp;2023/11 -- One paper has been accepted by <strong>International Journal of Computer Vision</strong>(JCR Q1， CCF-A).</li>
+                                        <li><img src="./sub_img/news2.gif" width="12%" style="background: none; vertical-align: text-bottom; border-radius: 0; padding: 0;">&nbsp;2024/11 -- 一篇论文被<strong>IEEE Transactions on Instrumentation and Measurement</strong>（JCR Q2）接受。</li>
+                                        <li><img src="./sub_img/news2.gif" width="12%" style="background: none; vertical-align: text-bottom; border-radius: 0; padding: 0;">&nbsp;2024/10 -- 一篇论文被<strong>IEEE Transactions on Emerging Topics in Computational Intelligence</strong>（JCR Q2）接受。</li>
+                                        <li><img src="./sub_img/news2.gif" width="12%" style="background: none; vertical-align: text-bottom; border-radius: 0; padding: 0;">&nbsp;2024/09 -- 一篇论文被<strong>Information Fusion</strong>（JCR Q1，CCF-A）接受。</li>
+                                        <li><img src="./sub_img/news2.gif" width="12%" style="background: none; vertical-align: text-bottom; border-radius: 0; padding: 0;">&nbsp;2024/04 -- 一篇论文被<strong>IEEE/CVF Conference on Computer Vision and Pattern Recognition</strong>（JCR Q1、CCF A）接受。</li>
+                                        <li><img src="./sub_img/news2.gif" width="12%" style="background: none; vertical-align: text-bottom; border-radius: 0; padding: 0;">&nbsp;2023/11 -- 一篇论文被<strong>International Journal of Computer Vision</strong>（JCR Q1，CCF-A）接受。</li>
                                     </div>
                                 </ul>
                             </div>
@@ -165,7 +167,7 @@
                     </div>
                 </div>
                 <br>
-                <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=200&t=tt&d=LZZ0YTbipXFWZ6lvSaTJt75IoLIi9silsXWRuQDdIwA"></script>
+                <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&amp;w=200&amp;t=tt&amp;d=LZZ0YTbipXFWZ6lvSaTJt75IoLIi9silsXWRuQDdIwA"></script>
             </div>
         </div>
     </div>

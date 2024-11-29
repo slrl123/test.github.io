@@ -1,87 +1,195 @@
 <!DOCTYPE html>
-<!-- saved from url=(0057)http://www.icst.pku.edu.cn/struct/people/yangs/index.html -->
-<html class="csstransforms csstransforms3d csstransitions"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		
-		<title>Huafeng Li</title>
-		<link href="./files/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-		<link href="./files/style.css" rel="stylesheet" type="text/css" media="all">
-		<link href="./files/prettyPhoto.css" rel="stylesheet" type="text/css" media="all">		
-		<link href="./files/css" rel="stylesheet" type="text/css">	
-	</head>
-	<body>
-		<!---start-wrap--->
-		<!---start-header--->
-	<div class="header">
-		<div class="wrap">
-			<!---start-logo--->
-			<div class="logo">
-				<a href="./index.html">Huafeng Li</a>
-			</div>
-			<!---End-logo--->
-			<!---start-top-nav--->
-			<div class="top-nav">
-				<ul>
-					<li id="Home" onclick="func(&#39;Me&#39;)"><a href="./index.html" class="scroll">Home</a></li>
-					<li id="Profile" onclick="func(&#39;Profile&#39;)"><a href="./Profile.html" class="scroll">Profile</a></li>
-					<li id="Publications" onclick="func(&#39;Publications&#39;)"><a href="./Publication.html" class="scroll">Publications</a></li>
-					<!--<li id="Profile-chinese" onclick="func(&#39;Honors Awards&#39;)"><a href="./Honors Awards.html" class="scroll">Honors & Awards</a></li>-->
-					<li id="MVPLab" onclick="func(&#39;MVP Lab&#39;)"><a href="./MVPLab.html" class="scroll">CVIP Group</a></li>
-                                        <!--<li id="Projects" onclick="func(&#39;Projects&#39;)"><a href="./Project.html" class="scroll">Projects</a></li>-->
-					<!-- <li id="Art" onclick="func(&#39;Art&#39;)"><a href="http://www.icst.pku.edu.cn/struct/people/yangs/index.html#art" class="scroll">Art Gallery</a></li>	-->
-					<li id="Contact" onclick="func(&#39;Contact&#39;)"><a href="./Contact.html" class="scroll">Contact</a></li>
-				</ul>
-			</div>
-			<div class="clear"> </div>
-			<!---End-top-nav--->
-	     </div>
-	</div>
-	
-	<script> 
-	var lastname = 'Me';
-	function func(name){
-		var div = document.getElementById(name); 
-		div.className = 'active'; 
-		div = document.getElementById(lastname); 
-		div.className = ''; 
-		lastname = name;
-	}
-	function coming_soon()
-	{
-		alert("Coming soon.");
-	}
-	</script> 
-	
-		<!---End-wrap--->
-	<div class="content">
-		<div class="grid3">
-			<div class="grid3-content">
-		<h3><b>Selected Publications and Patents:</b></h3>
-	
+<html class="csstransforms csstransforms3d csstransitions">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Huafeng Li</title>
+    <link href="./files/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="./files/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="./files/prettyPhoto.css" rel="stylesheet" type="text/css" media="all">
+    <link href="./files/css" rel="stylesheet" type="text/css">
+    <style>
+        /* 重置浏览器默认边距 */
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+        .people-photo {
+            border-radius: 50%;
+            height: 200px !important;
+            width: 200px !important;
+            box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.2), 0 5px 12px 0 rgba(0, 0, 0, 0.19);
+            margin-bottom: 5px;
+        }
+        .thumbnail-mvp {
+            padding: 4px;
+            margin-bottom: 20px;
+            line-height: 1.42857143;
+            text-align: center;
+        }
+        .thumbnail-people {
+            padding: 4px;
+            margin-bottom: 5px;
+            line-height: 1.42857143;
+            text-align: center;
+        }
+        .container-fluid {
+            font-family: Palatino Linotype, Helvetica Neue, Helvetica, Arial, sans-serif;
+        }
+        .academicegree {
+            font-size: 2.28rem;
+            margin: 1.14rem 0 0.912rem 0;
+        }
+        .row:nth-child(2n) {
+            background: whitesmoke;
+        }
+        .row {
+            margin-bottom: 50px;
+        }
+        .people-topic {
+            font-style: italic;
+            color: #1a237e;
+        }
+        /* 侧边栏样式 */
+        .sidebar {
+            position: fixed;
+            top: 72px; /* 调整此值以确保侧边栏在导航栏下方 */
+            left: 0;
+            width: 400px; /* 将侧边栏宽度固定为400像素 */
+            padding: 0px;
+            background-color: #f5f5f5;
+            height: calc(100% - 80px); /* 高度减去导航栏高度 */
+            overflow-y: auto;
+        }
+        /* 内容区域样式 */
+        .main-content {
+            margin-left: 400px; /* 与侧边栏宽度一致 */
+            padding: 20px;
+            background-color: #ffffff; /* 将背景色改为 #ffffff */
+        }
+        /* 响应式布局 */
+        @media (max-width: 767px) {
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                top: 0;
+            }
+            .main-content {
+                margin-left: 0;
+            }
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .content {
+            margin-top: 80px; /* 与导航栏高度一致 */
+        }
+    </style>
+</head>
+<body>
+    <!---start-header--->
+    <div class="header">
+        <div class="wrap">
+            <!---start-logo--->
+            <div class="logo">
+                <a href="./index.html">Huafeng Li</a>
+            </div>
+            <!---End-logo--->
+            <!---start-top-nav--->
+            <div class="top-nav">
+                <ul>
+                    <li id="Home" onclick="func('Me')"><a href="./index.html" class="scroll">Home</a></li>
+                    <li id="Profile" onclick="func('Profile')"><a href="./Profile.html" class="scroll">Profile</a></li>
+                    <li id="Publications" onclick="func('Publications')"><a href="./Publication.html" class="scroll">Publications</a></li>
+                    <li id="MVPLab" onclick="func('MVP Lab')"><a href="./MVPLab.html" class="scroll">CVIP Group</a></li>
+                    <!-- <li id="Profile-chinese" onclick="func('Profile-chinese')"><a href="./Profile-chinese.html" class="scroll">中文简介</a></li> -->
+                    <li id="Contact" onclick="func('Contact')"><a href="./Contact.html" class="scroll">Contact</a></li>
+                </ul>
+            </div>
+            <div class="clear"> </div>
+            <!---End-top-nav--->
+         </div>
+    </div>
+
+    <script> 
+    var lastname = 'Me';
+    function func(name){
+        var div = document.getElementById(name); 
+        div.className = 'active'; 
+        div = document.getElementById(lastname); 
+        div.className = ''; 
+        lastname = name;
+    }
+    function coming_soon()
+    {
+        alert("Coming soon.");
+    }
+    </script> 
+
+    <!---End-header--->
+    <div class="content">
+        <div class="container-fluid">
+            <!-- 侧边栏 -->
+            <div class="sidebar">
+                <!-- 侧边栏内容 -->
+                <br>
+                <br>
+                <br>
+                <div class="thumbnail-people">
+                    <a href="#">
+                        <img src="./sub_img/touxiang.png" class="people-photo">
+                    </a>
+                </div>
+                <br>
+                <ul style="text-align: center; list-style: none; padding: 0;">
+                    <li><strong>Huafeng Li</strong></li>
+                    <li>Professor</li>
+                </ul>
+                <br>
+                <br>
+                <br>
+                <ul style="text-align: center; list-style: none; padding: 0;">
+                    <li><a href="hfchina99@163.com">Email</a></li><br>
+                    <li><a href="#">Github</a></li><br>
+                    <li><a href="https://scholar.google.com/citations?user=njjX8D0AAAAJ&hl=en&oi=ao">Google Scholar</a></li><br>
+
+                </ul>
+            </div>
+            <!-- 主内容区域 -->
+            <div class="main-content">
+                  <div class="content">
+        <div class="grid3">
+            <div class="grid3-content">
+        <h3><b>Selected Publications and Patents:</b></h3>
+    
                 
 
-	
-	<!--COPYRIGHT: The copyright of the following materials belongs to corresponding publishers. 
+    
+    <!--COPYRIGHT: The copyright of the following materials belongs to corresponding publishers. 
 They are provided only for research and educational use that does not conflict to the interests of the publishers.
 -->
-	  </ul>
-			
-<!-- 			
+      </ul>
+            
+<!--            
 <h4><b>Pre-print:</b></h4>
 <ul class="graid3-ul">
 <div style="text-align: justify; display: block; margin-right: auto;">
-				
+                
 
   </ul>
   <hr />-->
-				
+                
 
-	<hr />	
+    <hr />  
 
 
-				
+                
 <h4><b>2024:</b></h4>
-		<ul class="graid3-ul">
-  <div style="text-align: justify; display: block; margin-right: auto;">	
+        <ul class="graid3-ul">
+  <div style="text-align: justify; display: block; margin-right: auto;">    
 <li>Y. Zhang, Z. Li, H. Li and D. Tao, 
   <a href="https://ieeexplore.ieee.org/abstract/document/10755138" target="_blank"><font color="#0000FF">"Prototype-Driven and Multi-Expert Integrated Multi-Modal MR Brain Tumor Image Segmentation"</font></a>, 
   <ud2>IEEE Transactions on Instrumentation and Measurement</ud2>, doi: 10.1109/TIM.2024.3500067.  
@@ -210,13 +318,13 @@ They are provided only for research and educational use that does not conflict t
   <a href="https://www.sciencedirect.com/science/article/pii/S0360544223029912" target="_blank"><font color="#0000FF">A new SOH estimation method for Lithium-ion batteries based on model-data-fusion</font></a>, 
   <ud2>Energy</ud2>, vol. 286, pp. 129597, 2024.
 </li>
-	  </ul>
+      </ul>
   <hr />
 
-				
+                
 <h4><b>2023:</b></h4>
-		<ul class="graid3-ul">
-  <div style="text-align: justify; display: block; margin-right: auto;">	
+        <ul class="graid3-ul">
+  <div style="text-align: justify; display: block; margin-right: auto;">    
 
 <li>Li, Huafeng, Dan Wang, Yuxin Huang, Yafei Zhang, and Zhengtao Yu, 
   <a href="https://ieeexplore.ieee.org/abstract/document/10364841/" target="_blank"><font color="#0000FF">Generation and recombination for multifocus image fusion with free number of inputs</font></a>, 
@@ -300,16 +408,16 @@ They are provided only for research and educational use that does not conflict t
   <ud2>Acta Electronica Sinica</ud2>, vol. 51, no. 1, pp. 160-171, 2023.
 </li>
 
-	  
-	  </ul>
+      
+      </ul>
   <hr />
-			
-			
-			
-			
-	
+            
+            
+            
+            
+    
 <h4><b>2022:</b></h4>
-		<ul class="graid3-ul">
+        <ul class="graid3-ul">
   <div style="text-align: justify; display: block; margin-right: auto;">
 
 <li> 石林波, 李华锋, 张亚飞, and 谢明鸿, "模态不变性特征学习和一致性细粒度信息挖掘的跨模态行人重识别", 模式识别与人工智能 (2022): 1.</li>
@@ -376,14 +484,14 @@ They are provided only for research and educational use that does not conflict t
 <li> Lin, Xinyu, Jinxing Li, Zeyu Ma, Huafeng Li, Shuang Li, Kaixiong Xu, Guangming Lu, and David Zhang, 
   <a href="http://openaccess.thecvf.com/content/CVPR2022/html/Lin_Learning_Modal-Invariant_and_Temporal-Memory_for_Video-Based_Visible-Infrared_Person_Re-Identification_CVPR_2022_paper.html" target="_blank"><font color="#0000FF">"Learning modal-invariant and temporal-memory for video-based visible-infrared person re-identification"</font></a>, 
   <ud2>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</ud2>, pp. 20973-20982, 2022.</li>
-	 
-	  </ul>
+     
+      </ul>
   <hr />
-	
-	
-	
+    
+    
+    
 <h4><b>2021:</b></h4>
-		<ul class="graid3-ul">
+        <ul class="graid3-ul">
   <div style="text-align: justify; display: block; margin-right: auto;">
  
   
@@ -440,13 +548,13 @@ They are provided only for research and educational use that does not conflict t
   </a>, 
   <ud2>Neurocomputing</ud2>, vol. 422, pp. 62-84, 2021.
 </li>
-	 
-	  </ul>
+     
+      </ul>
   <hr />
-	
-	
+    
+    
 <h4><b>2020:</b></h4>
-		<ul class="graid3-ul">
+        <ul class="graid3-ul">
 <div style="text-align: justify; display: block; margin-right: auto;">  
 
 <li> Li, Huafeng, Yiwen Chen, Dapeng Tao, Zhengtao Yu, and Guanqiu Qi, 
@@ -498,9 +606,9 @@ They are provided only for research and educational use that does not conflict t
 
 
   
-	</ul>
-			<hr />
-				
+    </ul>
+            <hr />
+                
 <h4><b>2019:</b></h4>
 <ul class="graid3-ul">
   <div style="text-align: justify; display: block; margin-right: auto;">
@@ -523,14 +631,14 @@ They are provided only for research and educational use that does not conflict t
   <a href="https://ieeexplore.ieee.org/abstract/document/8701665/" target="_blank"><font color="#0000FF">Discriminative dictionary learning-based multiple component decomposition for detail-preserving noisy image fusion</font></a>, 
   <ud2>IEEE Transactions on Instrumentation and Measurement</ud2>, vol. 69, no. 4, pp. 1082-1102, 2019.
 </li>
- 	  
-	  
-	  
+      
+      
+      
 </ul>
-	<hr />
+    <hr />
   
 <h4><b>2018:</b></h4>
-		<ul class="graid3-ul">
+        <ul class="graid3-ul">
   <div style="text-align: justify; display: block; margin-right: auto;">
 <li> Li, Huafeng, Jinting Zhu, and Dapeng Tao, 
   <a href="https://ieeexplore.ieee.org/abstract/document/8410867/" target="_blank"><font color="#0000FF">Asymmetric projection and dictionary learning with listwise and identity consistency constraints for person re-identification</font></a>, 
@@ -549,34 +657,34 @@ They are provided only for research and educational use that does not conflict t
 
   </ul>
   <hr />
-			
+            
 <!-- <h4><b>2017:</b></h4>
-		<ul class="graid3-ul">
+        <ul class="graid3-ul">
 <div style="text-align: justify; display: block; margin-right: auto;">  
 
 
   </ul>
-			<hr />
-			
+            <hr />
+            
 <h4><b>2016:</b></h4>
-		<ul class="graid3-ul">
+        <ul class="graid3-ul">
 <div style="text-align: justify; display: block; margin-right: auto;">
-	
+    
 
 </ul>
-			<hr /> -->
+            <hr /> -->
 <!--
 <h4><b>2015:</b></h4>
-		<ul class="graid3-ul">
+        <ul class="graid3-ul">
  <div style="text-align: justify; display: block; margin-right: auto;">
-	 
+     
 <li> Ping Han, <strong>Runmin Cong</strong>, and Zaiji Zhang, 
   <font color="#0000FF">Change detection algorithm of polarimetric SAR image based on polarization state extracting</font>,
   <ud2>Systems Engineering and Electronics</ud2>, vol. 37, no. 7, pp. 1526-1530, 2015. (in Chinese, EI)<br></li>
   </ul>
-				<hr />
+                <hr />
 -->
-			
+            
 <h4><b>授权中国发明专利:</b></h4>
 <ul class="graid3-ul">
 <div style="text-align: justify; display: block; margin-right: auto;">
@@ -601,55 +709,64 @@ They are provided only for research and educational use that does not conflict t
 <li>基于多成分分析和残差补偿的图像融合与超分辨率重建联合实现方法，专利号：ZL 201910868215.8，申请日：无，授权公告日：2023.03.07</li>
 
 
-  </ul>	
-	<hr />
-			
+  </ul> 
+    <hr />
+            
 <ul class="graid3-ul">
         <div style="text-align: justify; display: block; margin-right: auto;">
-	Here are the Impact Factors (IF) of selected journals of my publications. <br>
+    Here are the Impact Factors (IF) of selected journals of my publications. <br>
         
-	- IEEE Transactions on Neural Networks and Learning Systems (TNNLS): 14.255<br>
-	- IEEE Transactions on Image Processing (TIP): 10.856<br>
-	- IEEE Transactions on Industrial Informatics (TII): 10.215<br>
-	- IEEE Transactions on Geoscience and Remote Sensing (TGRS): 7.255<br>
-	- IEEE Transactions on Information Forensics and Security (TIFS): 7.231<br>
-	- IEEE Transactions on Intelligent Transportation Systems (TITS): 6.319<br>
-	- IEEE Transactions on Circuits and Systems for Video Technology (TCSVT): 5.858<br>
-	- IEEE Transactions on Emerging Topics in Computational Intelligence (TETCI): 4.981<br>
-	- IEEE Transactions on Computational Imaging (TCI): 4.694<br>
-	- IEEE Transactions on Instrumentation and Measurement (TIM): 4.016<br>
-	
+    - IEEE Transactions on Neural Networks and Learning Systems (TNNLS): 14.255<br>
+    - IEEE Transactions on Image Processing (TIP): 10.856<br>
+    - IEEE Transactions on Industrial Informatics (TII): 10.215<br>
+    - IEEE Transactions on Geoscience and Remote Sensing (TGRS): 7.255<br>
+    - IEEE Transactions on Information Forensics and Security (TIFS): 7.231<br>
+    - IEEE Transactions on Intelligent Transportation Systems (TITS): 6.319<br>
+    - IEEE Transactions on Circuits and Systems for Video Technology (TCSVT): 5.858<br>
+    - IEEE Transactions on Emerging Topics in Computational Intelligence (TETCI): 4.981<br>
+    - IEEE Transactions on Computational Imaging (TCI): 4.694<br>
+    - IEEE Transactions on Instrumentation and Measurement (TIM): 4.016<br>
+    
 
-	- Information Fusion: 17.564<br>
-	- International Journal of Computer Vision (IJCV): 14.980<br>
-	- Neural Networks (NN): 8.050<br>
-	- Knowledge-Based Systems (KBS): 8.038<br>
-	- Pattern Recognition (PR): 7.196<br>
-	- Expert Systems with Applications (ESWA): 8.665<br>
-	- Biomedical Signal Processing and Control (BSPC): 4.614<br>
-	- Simulation Modelling Practice and Theory (SMPAT): 3.357<br>
-	- Mathematics: 2.592<br>
-	- IET Signal Processing (IETSP): 2.000<br>
-	
+    - Information Fusion: 17.564<br>
+    - International Journal of Computer Vision (IJCV): 14.980<br>
+    - Neural Networks (NN): 8.050<br>
+    - Knowledge-Based Systems (KBS): 8.038<br>
+    - Pattern Recognition (PR): 7.196<br>
+    - Expert Systems with Applications (ESWA): 8.665<br>
+    - Biomedical Signal Processing and Control (BSPC): 4.614<br>
+    - Simulation Modelling Practice and Theory (SMPAT): 3.357<br>
+    - Mathematics: 2.592<br>
+    - IET Signal Processing (IETSP): 2.000<br>
+    
 
-	- Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR): ~51.98<br>
-	- Proceedings of the AAAI Conference on Artificial Intelligence (AAAI): ~4.0<br>
-	- Proceedings of the ACM International Conference on Multimedia (ACMMM): ~3.5<br>
-	
-	
-			
-			
-	</div>			
-		</div>	
-	</div>
-	
-		<script type="text/javascript" src="./files/jquery.min.js.下载"></script>
-		<script type="text/javascript" src="./files/bootstrap.js.下载"></script>
-		<script type="text/javascript" src="./files/jquery.banner.js.下载"></script>
-		<script type="text/javascript" src="./files/jquery.prettyPhoto.js.下载"></script>		
-		<script type="text/javascript" src="./files/jquery.isotope.js.下载"></script>	
-		<script type="text/javascript" src="./files/main.js.下载"></script>				
-	
+    - Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR): ~51.98<br>
+    - Proceedings of the AAAI Conference on Artificial Intelligence (AAAI): ~4.0<br>
+    - Proceedings of the ACM International Conference on Multimedia (ACMMM): ~3.5<br>
+    
+    
+            
+            
+    </div>          
+        </div>  
+    </div>
+    
+        <script type="text/javascript" src="./files/jquery.min.js.下载"></script>
+        <script type="text/javascript" src="./files/bootstrap.js.下载"></script>
+        <script type="text/javascript" src="./files/jquery.banner.js.下载"></script>
+        <script type="text/javascript" src="./files/jquery.prettyPhoto.js.下载"></script>     
+        <script type="text/javascript" src="./files/jquery.isotope.js.下载"></script> 
+        <script type="text/javascript" src="./files/main.js.下载"></script>               
+    
+            </div>
+        </div>
+    </div>
 
-
-</body></html>
+    <script type="text/javascript" src="./files/jquery.min.js"></script>
+    <script type="text/javascript" src="./files/bootstrap.js"></script>
+    <script type="text/javascript" src="./files/jquery.banner.js"></script>
+    <script type="text/javascript" src="./files/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="./files/jquery.isotope.js"></script>
+    <script type="text/javascript" src="./files/main.js"></script>
+</body>
+</html>

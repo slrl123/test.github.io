@@ -68,7 +68,7 @@ img{max-width:100%;}
 	padding: 20px;
 }
 .top-nav{
-	float:right;
+	float:left;
 }
 .top-nav ul li{
 	display:inline-block;

@@ -57,7 +57,7 @@ img{max-width:100%;}
 }
 .logo{
 	float:left;
-	margin-left: 50px;
+	margin-left: 60px;
 }
 .logo a{
 	font-family: 'Arial';
@@ -69,6 +69,7 @@ img{max-width:100%;}
 }
 .top-nav{
 	float:left;
+	margin-left: 100px;
 }
 .top-nav ul li{
 	display:inline-block;

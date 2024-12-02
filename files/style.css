@@ -57,6 +57,7 @@ img{max-width:100%;}
 }
 .logo{
 	float:left;
+	margin-left: 300px;
 }
 .logo a{
 	font-family: 'Arial';

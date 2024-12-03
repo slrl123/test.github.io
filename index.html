@@ -87,6 +87,26 @@
         .content {
             margin-top: 80px; /* 与导航栏高度一致 */
         }
+
+	.widget-container {
+	    width: 300px;
+	    height: 300px;
+	    margin: 0 auto; /* 水平居中 */
+	    display: flex; /* 使用 Flexbox 布局 */
+	    justify-content: center; /* 水平居中 */
+	    align-items: center; /* 垂直居中 */
+	    overflow: hidden; /* 防止超出部分显示 */
+	    position: relative; /* 防止子元素位置异常 */
+	}
+
+	#clstr_globe {
+	    width: 300px;
+	    height: 300px;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	}
+
     </style>
 </head>
 <body>
@@ -203,7 +223,10 @@
                 </div>
                 <br>
                 
-                <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=tNb2z5y7C1yXd-vX-qZxQ8mJiAKeMEvkyLrktxOYxfI"></script>
+                <div class="widget-container">
+		 	<script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=tNb2z5y7C1yXd-vX-qZxQ8mJiAKeMEvkyLrktxOYxfI"></script>
+		</div>
+
 
 	
             		<script type="text/javascript" src="./files/jquery.min.js.下载"></script>
